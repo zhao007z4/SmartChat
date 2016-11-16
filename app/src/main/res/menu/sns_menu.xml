@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+    <item
+        android:title="@string/STR_SYNC"
+        android:id="@+id/sync_menu_btn"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:title="@string/STR_ENTRY_WECHAT"
+        android:id="@+id/entry_menu_btn"
+        app:showAsAction="ifRoom"/>
+
+</menu>

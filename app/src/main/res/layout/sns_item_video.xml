@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+    <CheckBox
+        android:id="@+id/sns_item_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New CheckBox"/>
+
+    <TextView
+        style="@style/DefaultTimeText"
+        android:id="@+id/sns_item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:text="Datetime"/>
+
+    <LinearLayout
+        android:id="@+id/llText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sns_item_username"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sns_item_username"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="连接转发"/>
+
+            <Button
+                android:id="@+id/btnShareReplace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="系统转发"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/DefaultText"
+            android:id="@+id/sns_item_text_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:text="New Text"/>
+
+
+    </LinearLayout>
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llText">
+
+        <LinearLayout
+            android:id="@+id/sns_item_photo_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"/>
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+
+</RelativeLayout>

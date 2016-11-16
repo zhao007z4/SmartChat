@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">微闪</string>
+    <string name="not_rooted">查询微信缓存失败。请允许root权限后重试。</string>
+    <string name="wechat_version_label">微信版本</string>
+    <string name="wechat_version_supported">恭喜，支持该微信版本</string>
+    <string name="wechat_version_unsupported">暂不支持该微信版本</string>
+    <string name="wechat_not_found">找不到微信</string>
+    <string name="supported_wechat_versions">支持的微信版本</string>
+    <string name="description_1">请确认已允许本APP获得root权限。</string>
+    <string name="STR_REPLACE_TIPS">系统转发：点击“执行”，选择的视频将被添加的小视屏列表。返回微信朋友圈,点击“小视屏”，进入小视频列表，列表中将会展示你选择的视频。</string>
+    <string name="STR_LOCAL_VIDEO">本地视频</string>
+    <string name="STR_FAV_VIDEO">微信收藏夹视频</string>
+    <string name="STR_GET_LOACL_FAIL">获取本地视频失败</string>
+    <string name="STR_REGEDIT_CODE">请输入注册码</string>
+    <string name="STR_SCAN">扫描</string>
+    <string name="STR_REGEDIT">注册</string>
+    <string name="STR_CODE_INVAILD">无效注册码，请重新输入</string>
+    <string name="STR_REGEDIT_SUCC">注册成功</string>
+    <string name="STR_GEN_REGEDIT_INFO">生成注册信息</string>
+    <string name="STR_SYNC">同步</string>
+    <string name="STR_ENTRY_WECHAT">进入微信</string>
+    <string name="STR_ENTRY_WECHAT_ERROR">请确认是否已经安装了微信</string>
+    <string name="STR_PIC_LOADING">图片正在下载中,请稍后再试</string>
+    <string name="STR_VIDEO_LOADING">视频正在下载中,请稍后再试</string>
+</resources>

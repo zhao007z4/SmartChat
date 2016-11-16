@@ -1,0 +1,82 @@
+apply plugin:'com.android.model.application'
+
+model {
+
+
+    android.sources.main {
+        jniLibs.source.srcDir 'src/main/jniLibs'
+    }
+
+
+    android {
+        compileSdkVersion 23
+        buildToolsVersion "23.0.2"
+
+//        dexOptions {
+//            maxProcessCount 4 // this is the default value
+//            javaMaxHeapSize "2g"
+//        }
+
+        defaultConfig {
+            applicationId "com.zyx.smarttouch"
+            minSdkVersion.apiLevel 11
+            targetSdkVersion.apiLevel 23
+            versionCode 1
+            versionName '1.0.1'
+            archivesBaseName = "smartchat-v$versionName-$versionCode"
+
+            buildConfigFields {
+                create() {
+                    type "int"
+                    name "VALUE"
+                    value "1"
+                }
+            }
+        }
+
+        ndk {
+            moduleName = "sns"
+            toolchain = "clang"
+            ldLibs.add("log")
+        }
+
+        buildTypes {
+            release {
+                minifyEnabled true
+                useProguard = true
+                proguardFiles.add(file('proguard-rules.pro'))
+                ndk {
+                    debuggable true
+                }
+            }
+            debug {
+                useProguard false
+                ndk {
+                    debuggable true
+                }
+            }
+        }
+
+        productFlavors {
+            create("all") {
+            }
+        }
+    }
+
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile files('libs/universal-image-loader-1.9.5.jar')
+    compile 'com.zhy:okhttputils:2.6.1'
+    compile 'com.google.code.gson:gson:2.3.1'
+    compile 'com.squareup.okhttp3:okhttp-urlconnection:3.2.0'
+    compile files('libs/libammsdk.jar')
+    compile files('libs/sqlcipher.jar')
+    compile project(':zxing')
+    compile files('libs/YoumiSdk_v6.4.4_2016-09-08.jar')
+    compile 'com.android.support:support-v4:23.1.1'
+}

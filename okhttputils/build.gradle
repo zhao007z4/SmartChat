@@ -1,0 +1,71 @@
+apply plugin: 'com.android.model.library'
+//apply plugin: 'com.novoda.bintray-release'//添加
+
+model {
+    android {
+        compileSdkVersion 23
+        buildToolsVersion "23.0.1"
+
+        defaultConfig {
+            minSdkVersion.apiLevel 9
+            targetSdkVersion.apiLevel 23
+            versionCode 1
+            versionName "1.0"
+        }
+
+//        buildTypes {
+//            release {
+//                minifyEnabled true
+//                useProguard = true
+//                proguardFiles.add(file('proguard-rules.pro'))
+//                ndk {
+//                    debuggable true
+//                }
+//            }
+//            debug {
+//                useProguard false
+//                ndk {
+//                    debuggable true
+//                }
+//            }
+//        }
+
+//        lintOptions {
+//            abortOnError false
+//            warning 'InvalidPackage'
+//        }
+
+    }
+}
+
+
+task clearJar(type: Delete) {
+    delete 'build/outputs/okhttputils.jar'
+}
+
+task makeJar(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('build/outputs/')
+    include('classes.jar')
+    rename ('classes.jar', 'okhttputils-2_6_1.jar')
+}
+
+makeJar.dependsOn(clearJar, build)
+
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+}
+
+//添加
+//publish {
+//    userOrg = 'hongyangandroid'//bintray.com用户名
+//    groupId = 'com.zhy'//jcenter上的路径
+//    artifactId = 'okhttputils'//项目名称
+//    publishVersion = '2.6.1'//版本号
+//    desc = 'Oh hi, this is a nice description for a project, right?'
+//    website = 'https://github.com/hongyangAndroid/okhttp-utils'
+//}
+

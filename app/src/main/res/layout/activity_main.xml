@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:layout_margin="10dp">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/STR_REGEDIT_CODE"
+        android:id="@+id/etCode"/>
+
+    <Button
+        android:text="@string/STR_SCAN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnScan"
+        android:layout_marginTop="@dimen/MARGIN_NORMAL_SIZE"
+        android:layout_marginBottom="@dimen/MARGIN_NORMAL_SIZE"/>
+
+    <Button
+        android:text="@string/STR_REGEDIT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnRegedit"/>
+
+    <Button
+        android:text="@string/STR_GEN_REGEDIT_INFO"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnGen"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etRegeditInfo"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"
+        android:padding="6dp"
+        android:layout_weight="1" />
+
+    <TextView
+        style="@style/DefaultText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="微信号:ws007z8" />
+
+</LinearLayout>

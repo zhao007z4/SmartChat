@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zyx.smarttouch">
+
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.hardware.camera" />
+    <uses-permission android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:name="com.zyx.smarttouch.gui.SnsApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/smartwechat"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".gui.SplashActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".gui.MainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+        </activity>
+
+        <activity
+            android:name=".gui.RegeditActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+        </activity>
+
+        <activity
+            android:name=".gui.EntryActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+        </activity>
+
+        <activity
+            android:name=".gui.ReplaceVideoActivity"
+            android:parentActivityName=".gui.EntryActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".gui.EntryActivity" />
+        </activity>
+
+        <activity android:name=".scan.ImageScanActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+        </activity>
+
+
+
+        <activity android:name="com.zyx.smarttouch.wxapi.WXEntryActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name="net.youmi.android.AdBrowser"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity >
+
+        <service
+            android:name="net.youmi.android.AdService"
+            android:exported="false" >
+        </service >
+
+        <receiver android:name="net.youmi.android.AdReceiver" >
+            <intent-filter >
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_INSTALL" />
+
+                <data android:scheme="package" />
+            </intent-filter >
+        </receiver >
+
+        <meta-data
+            android:name="10020"
+            android:value="10020" >
+        </meta-data>
+
+    </application>
+
+</manifest>
